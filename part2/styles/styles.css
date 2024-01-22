@@ -1,0 +1,267 @@
+
+body{
+    background-color: var(--white-bkg);
+    color:var(--black-txt); 
+    font-family: var(--font_text);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95vh;   
+}
+
+/* HERO*/
+
+.hero_content{
+    height: 85vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    perspective: 10px;
+    background-image: linear-gradient(to bottom left,
+    rgba(0, 0, 0, .4),
+    rgba(0, 0, 0, 1)
+    ), url("../images/foto_canta_y_no_llores.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(40%);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+.hero_text{
+    font-family: var(--font_title);    
+    position: relative;
+    top: 55%;
+    color:var(--white-bkg);
+    z-index: 2;
+    text-align: center;       
+} 
+.hero_text h1{
+    font-size: 3.5rem;
+    padding-bottom: 1rem;
+}
+.hero_text h2{
+    font-size: 2rem;
+    margin-bottom: 3.5rem;
+}
+
+/* HERO MEDIA QUERIES*/
+
+/* INDEX */
+
+.home_catalogue{   
+    padding: 2rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+.home_article{   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+    color:var(--black-txt);
+}
+.home_article a{
+    color:var(--black-txt);
+}
+.home_article a:hover{
+    color:var(--corp-color);
+    text-decoration: underline;
+}
+.home_img{
+    width: 70vw;
+    margin-bottom: 1rem;
+}
+/* INDEX MEDIA QUERIES*/
+@media all and (min-width: 768px) {
+    
+    .home_catalogue_wraper{     
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .home_img{
+        width: 40vw;
+    }
+}
+@media all and (min-width: 1024px) {   
+    .home_catalogue_wraper{
+        gap:2rem;
+    }
+    .home_img{
+        width: 30vw;
+    }
+}
+/* CARDS INDIVIDUALES DE LAS PELÍCULAS */
+.card{
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+.card_img{
+    width: 70vw;
+    padding-top: 1rem;
+}
+.card_text_wrap{
+    padding: 1rem 0 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card_table_container{
+    padding: 1rem 0 1rem 0;
+    width: 100%;
+}
+.card_h4{
+    padding-bottom: 0.7rem;
+}
+.card_table{
+    width: 100%;
+}
+.card_table_row{
+    padding-bottom: 1rem;
+}
+
+/* CONTACTO Y CATÁLOGO*/
+
+.main_container{
+    text-align: center; 
+    padding: 0 2rem 0 2rem;
+    position:relative;
+    top:15vh; 
+    margin-bottom: 6rem;
+}
+
+/* CONTACTO */
+
+.contact h2{
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+}
+.contact_text_wraper{
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    font-size: 1.3rem;
+}
+.contact_text_email{
+    border-top: solid 1px var(--corp-color);
+    margin-top: 1rem;
+    padding-top:0.7rem;
+}
+.contact_img_container{
+    display: flex;
+    justify-content: center;    
+}
+.contact_img{
+    width: 70vw;
+}
+@media all and (min-device-width: 768px){
+    .contact{
+        height: 70vh;
+    }
+    .contact_img_container{
+        padding:2rem 0 2rem 0;
+    }
+}
+@media all and (min-device-width: 1024px){
+    .contact{   
+        height: 100%;     
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        gap:5rem;
+    }
+    .contact_wrap{
+        height: 80vh;
+    }
+    .contact_text_container{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;  
+    }  
+    .contact_text_container h2{
+        font-size: 2rem;
+    }
+    .contact_text_wraper{
+        font-size: 1.5rem;
+    }
+    .contact_img_container{
+        padding:0;
+       
+    }
+    .contact_img{
+        width: 800px;
+    }
+}
+@media all and (min-device-width: 1704px){
+    .contact{
+        justify-content: space-around;
+    }
+    .contact_text_container h2{
+        font-size: 3rem;
+    }
+    .contact_text_wraper{
+        font-size: 2.5rem;
+    }
+}
+/* CATÁLOGO */
+/* PROBAR ESTO PARA QUE LAS IMÁGENES SE VEAN IGUALES */
+.catalogue_wrap{
+    padding-bottom: 2rem;
+}
+.img{
+    width:100px;
+    height:100px;
+ 
+ /*Scale down will take the necessary specified space that is 100px x 100px without stretching the image*/
+     object-fit:scale-down;
+ 
+ }
+.catalogue_img{
+    width: 70vw;
+    margin-bottom: 0.5rem;
+}
+.catalogue_h2{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.catalogue_h3{
+    font-size:1rem;
+}
+.catalogue_article{
+    padding-bottom: 2.5rem;
+}
+.catalogue_article a{
+    color:var(--black-txt);
+}
+.catalogue_article a:hover{
+    color:var(--corp-color);
+    text-decoration: underline;
+}
+.catalogue_subtitle{
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+/* CATÁLOGO MEDIA QUERIES*/
+
+@media all and (min-device-width: 768px){
+    .catalogue{
+       display: flex; 
+       flex-wrap: wrap;
+       justify-content: center;
+       gap:2rem;
+    }
+    .catalogue_img{       
+        width: 30vh;
+        margin-bottom: 0.5rem;
+    }
+}

@@ -217,6 +217,17 @@
                     </li>                
                 <?php endforeach; ?>
             </ul>
+
+            <p>Interesante en cualquier situacion para debugear es crear una función que te lea una variable o una variable global y luego tenga un die() que hace que no se ejecute nada más después de esa función</p>
+            <?php
+            function dd($value){
+                echo "<pre>";
+                var_dump($value);
+                echo "</pre>";
+                die();
+            };            
+            ?>
+                   
     </main>
 </body>
 </html>
