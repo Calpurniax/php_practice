@@ -52,17 +52,27 @@
             //associative array
             $books2=[
                 [
-                    'name'=> 'Cumbres borrascosas',
+                    'title'=> 'Cumbres borrascosas',
                     'author'=>'Emily Brontë',
                     'year'=>'1847'
                 ],
                 [
-                    'name'=>'Frankenstein',
+                    'title'=>'Frankenstein',
                     'author'=>'Mary Shelley',
                     'year'=>'1818'
                 ],
                 [
-                    'name'=>'La mala costumbre',
+                    'title'=>'Mathilda',
+                    'author'=>'Mary Shelley',
+                    'year'=>'1819'
+                ],
+                [
+                    'title'=>'Mathilda',
+                    'author'=>'Roald Dahl',
+                    'year'=>'1988'
+                ],
+                [
+                    'title'=>'La mala costumbre',
                     'author'=>'Alana S. Portero',
                     'year'=>'2023'
                 ]
@@ -72,7 +82,7 @@
             <?php foreach ($books2 as $book) : ?>
                 <li> 
                     <!-- tiene que ser un < ? = por cosa que quieras que se imprima -->
-                         <span><?= $book['name'];?> de <?= $book['author'];?></span>                   
+                         <span><?= $book['title'];?> de <?= $book['author'];?></span>                   
                     </li>
             <?php endforeach; ?>  
             <p></p>
@@ -94,14 +104,14 @@
             <?php foreach ($books2 as $book) : ?>
                  <?php if ($book['author'] === 'Mary Shelley') : ?>
                     <li>                     
-                        <span><?= $book['name'];?> de <?= $book['author'];?></span>                   
+                        <span><?= $book['title'];?> de <?= $book['author'];?></span>                   
                     </li>
                 <?php endif; ?>
             <?php endforeach; ?>
                     <!-- un poco más sofisticado -->
             <?php foreach (filterByAuthor($books2) as $book) : ?>                 
                     <li>                     
-                        <span><?= $book['name'];?> de <?= $book['author'];?></span>                   
+                        <span><?= $book['title'];?> de <?= $book['author'];?></span>                   
                     </li>                
             <?php endforeach; ?>
             <p> ejemplo sencillo de pintar algo que te devuelve una función: declaras una q sea un return de un string y luego la llamas a la funcion con () y la parte de php de "echo"</p>
@@ -123,9 +133,90 @@
             
             <?php foreach (filterByYear($books2, '2023') as $book) : ?>                 
                     <li>                     
-                        <span><?= $book['name'];?> de <?= $book['author'];?></span>                   
+                        <span><?= $book['title'];?> de <?= $book['author'];?></span>                   
                     </li>                
             <?php endforeach; ?>
+            <p>Creamos una función anónima alojada en una variable:</p>
+            <?php
+            $filteredByAuthor = function ($books, $author){
+                $filteredBooks=[];
+                foreach ($books as $book){
+                    if($book['author']===$author){
+                        $filteredBooks[]=$book;
+                    }
+                }
+                return $filteredBooks;
+            };
+            $refilterBooks=$filteredByAuthor($books2, 'Emily Brontë')
+            ?>
+            <ul>
+                <?php foreach ($refilterBooks as $book) : ?>                 
+                    <li>                     
+                        <span><?= $book['title'];?> de <?= $book['author'];?></span>                   
+                    </li>                
+                <?php endforeach; ?>
+            </ul>
+            <p>Refactorizando:</p>
+            <?php
+            function filter($items, $key, $value){
+                $filteredItems =[];
+                foreach ($items as $item){
+                    if($item[$key]===$value){
+                        $filteredItems[]=$item;
+                    }
+                };
+                return $filteredItems;
+            }
+            $genericFilter = filter($books2, 'title', 'Frankenstein')
+            ?>
+            <ul>          
+                <?php foreach ($genericFilter as $item) : ?>                 
+                    <li>                     
+                        <span><?= $item['title'];?> de <?= $item['author'];?></span>                   
+                    </li>                
+                <?php endforeach; ?>
+            </ul>
+            <p>Refactorizando v2:</p>
+            <?php
+            function filter2($items, $function){
+                $filteredItems =[];
+                foreach ($items as $item){
+                    if($function($item)){
+                        $filteredItems[]=$item;
+                    }
+                };
+                return $filteredItems;
+            }
+            $genericFilter2 = filter2($books2, function($book){
+                return $book['title']=== 'Frankenstein';
+                // esta linea estaba antes dentro de la fncion, ahora se lo mandarías al llamarla con lo cual es mucho más sencillo todo
+            })
+            ?>
+            <ul>          
+                <?php foreach ($genericFilter2 as $item) : ?>                 
+                    <li>                     
+                        <span><?= $item['title'];?> de <?= $item['author'];?></span>                   
+                    </li>                
+                <?php endforeach; ?>
+            </ul>
+            <p>Refactorizando con función específica para arrays, te quitarías crear toda la función anónima anterior</p>
+            <?php 
+            $filteredWithPhp = array_filter($books2, function($book){
+                //return $book['year']<='1900';
+                //aqui pondrías la condición que prefieras igual que antes, esta es una opción, otra sería
+                return $book['author']==='Mary Shelley' || $book['author']==='Alana S. Portero';
+                //el AND es con &&
+                //return $book['author'] ==='Mary Shelley' && $book['title'] ==='Mathilda';
+                
+            })
+            ?>
+            <ul>          
+                <?php foreach ($filteredWithPhp as $item) : ?>                 
+                    <li>                     
+                        <span><?= $item['title'];?> de <?= $item['author'];?></span>                   
+                    </li>                
+                <?php endforeach; ?>
+            </ul>
     </main>
 </body>
 </html>
