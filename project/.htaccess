@@ -1,6 +1,6 @@
 RewriteEngine On
-RewriteBase /project/
+RewriteBase /personal/php_practice/project/
 RewriteRule ^index\\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /project/index.php [L]
+RewriteRule . /personal/php_practice/project/index.php [L]
