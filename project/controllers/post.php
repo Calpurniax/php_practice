@@ -6,17 +6,17 @@ $db= new Database($config['database']);
 
 
 
-$current_author=1;
+$current_user=1;
 
 $post= $db->query("select * from posts where id = :id",[
     'id'=> $_GET['id']
 ])->fetch();
 
 if(!$post){
-    abort(404, $uri);
+    abort(Response::NOT_FOUND, $uri);
 };
-if($post['author_id']!== $current_author){
-    abort(403, $uri);
+if($post['author_id']!== $current_user){
+    abort(Response::FORBIDDEN, $uri);
 };
 
 $heading = "Post";
