@@ -8,7 +8,7 @@ include "partials/header.php" ?>
   <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
       <p class="text-3xl">Sorry, you are not authorized</p>
-      <a class="underline" href="posts">Back to posts</a>
+      <a class="underline" href="notes">Back to notes</a>
     </div>
   </main>
 </div>

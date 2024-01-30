@@ -7,7 +7,7 @@ require 'router.php';
 
 
 
-// dd($posts);
+// dd($notes);
 
 
 

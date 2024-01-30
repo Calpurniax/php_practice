@@ -8,12 +8,12 @@ $db= new Database($config['database']);
 
 $current_user=1;
 
-$post= $db->query("select * from posts where id = :id",[
+$note= $db->query("select * from notes where id = :id",[
     'id'=> $_GET['id']
 ])->findOrFail();
 
 
-authorize($post['author_id']=== $current_user);
+authorize($note['author_id']=== $current_user);
 
-$heading = "Post";
-require "views/post.view.php";
+$heading = "note";
+require "views/note.view.php";
