@@ -12,4 +12,4 @@ $notes= $db->query($query)->get();
 
 
 $heading = "My notes";
-require "views/notes.view.php";
+require "views/notes/index.view.php";
