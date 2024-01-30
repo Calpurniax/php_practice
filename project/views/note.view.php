@@ -8,7 +8,7 @@
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <h1>Los posis</h1>
         <a href="notes" class="text-blue-500">Go back</a>
-        <p class="mt-6"><?=$note['content']?></p>
+        <p class="mt-6"><?=htmlspecialchars($note['content'])?></p>
         
     </div>
   </main>

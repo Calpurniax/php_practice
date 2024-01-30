@@ -10,7 +10,7 @@
       <ul>
         <?php foreach ($notes as $note) : ?>
             <li class="">
-              <a class="text-blue-500 hover:underline"href="note?id=<?=$note['id']?>">
+              <a class="text-blue-500 hover:underline"href="note?id=<?=htmlspecialchars($note['id'])?>">
               <?=$note['content']?>
               </a>
             </li>
