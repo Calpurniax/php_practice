@@ -8,7 +8,7 @@ $db= new Database($config['database']);
 $current_user=1;
 $query = "select * from posts where author_id = $current_user";
 
-$posts= $db->query($query)->fetchAll();
+$posts= $db->query($query)->get();
 
 
 $heading = "My posts";

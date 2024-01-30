@@ -10,14 +10,10 @@ $current_user=1;
 
 $post= $db->query("select * from posts where id = :id",[
     'id'=> $_GET['id']
-])->fetch();
+])->findOrFail();
 
-if(!$post){
-    abort(Response::NOT_FOUND, $uri);
-};
-if($post['author_id']!== $current_user){
-    abort(Response::FORBIDDEN, $uri);
-};
+
+authorize($post['author_id']=== $current_user);
 
 $heading = "Post";
 require "views/post.view.php";

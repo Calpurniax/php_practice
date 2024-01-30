@@ -11,7 +11,7 @@ function urlIs($value){
     return $_SERVER['REQUEST_URI']=== $value;
 }
 
-function abort($code, $uri){
+function abort($code){
     http_response_code($code);    
     require "views/$code.php";
 }
@@ -21,6 +21,12 @@ function routerController($uri, $routes){
         require $routes[$uri];
     }
     else{
-        abort(404, $uri);
+        abort(404);
     }
+}
+
+function authorize ($condition, $response = Response::FORBIDDEN){
+    if(!$condition){
+        abort($response);
+    };
 }
