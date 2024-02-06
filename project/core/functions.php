@@ -1,5 +1,9 @@
 <?php
 
+
+use core\Response;
+
+
 function dd ($value){
     echo "<pre>";
     var_dump($value);
@@ -13,12 +17,12 @@ function urlIs($value){
 
 function abort($code){
     http_response_code($code);    
-    require "views/$code.php";
+    require base_path("views/$code.php");
 }
 
 function routerController($uri, $routes){
     if(array_key_exists($uri, $routes)){  
-        require $routes[$uri];
+        require base_path($routes[$uri]);
     }
     else{
         abort(404);

@@ -1,5 +1,7 @@
 <?php
 
+namespace core;
+
 class Validator{
 
      //al crearlo como static puedes llamarlo sin tener q crear una instancia de la clase

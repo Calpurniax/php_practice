@@ -1,5 +1,8 @@
 <?php
 
+use core\Database;
+use core\Validator;
+
 $heading = "Create a new note";
 
 //create an instance for DB

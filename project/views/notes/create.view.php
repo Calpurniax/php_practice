@@ -22,7 +22,7 @@
             </div>
           </div>
           <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
-            <a href="/personal/php_practice/project/notes" type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-white">Back to notes</a>
+            <a href="/personal/php_practice/project/public/notes" type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-white">Back to notes</a>
             <button type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-white">Save</button>
           </div>      
         </form>
