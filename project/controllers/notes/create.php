@@ -3,17 +3,12 @@
 $heading = "Create a new note";
 
 //create an instance for DB
-$config= require "config.php";
+$config= require base_path('config.php');
 $db= new Database($config['database']);
 
+$errors =[];
 
-require "Validator.php";
-
-
-
-if($_SERVER['REQUEST_METHOD']==='POST'){
-
-    $errors =[];
+if($_SERVER['REQUEST_METHOD']==='POST'){    
 
     if(!Validator::string($_POST['content'],1,1000)){
        $errors['body'] = "Notes should be between 1 and 1000 characters";
@@ -27,4 +22,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     }    
 }
 
-require "views/notes/create.view.php";
+view('notes/create.view.php',[
+    'heading' => "Show a note",
+    'errors' => $errors,
+]);

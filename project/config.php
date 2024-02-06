@@ -7,4 +7,4 @@ return  [
             'dbname'=>'project',
             'charset'=>'utf8mb4'
     ]
-    ];
+];

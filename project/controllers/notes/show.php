@@ -1,7 +1,7 @@
 <?php
 
 //create an instance for DB
-$config= require "config.php";
+$config= require base_path('config.php');
 $db= new Database($config['database']);
 
 
@@ -15,5 +15,10 @@ $note= $db->query("select * from notes where id = :id",[
 
 authorize($note['author_id']=== $current_user);
 
-$heading = "Show a note";
-require "views/notes/show.view.php";
+
+
+
+view('notes/show.view.php',[
+    'heading' => "Show a note",
+    'note'=> $note
+]);

@@ -1,11 +1,12 @@
 <?php 
-return [  
-        '/personal/php_practice/project/' => 'controllers/index.php',
-        '/personal/php_practice/project/about' => 'controllers/about.php',
-        '/personal/php_practice/project/contact' => 'controllers/contact.php',
-        '/personal/php_practice/project/notes' => 'controllers/notes/index.php',
-        '/personal/php_practice/project/note' => 'controllers/notes/show.php',
-        '/personal/php_practice/project/notes/create' => 'controllers/notes/create.php'
 
+$pathPublic= '/personal/php_practice/project/public/';
+return [  
+        $pathPublic => 'controllers/index.php',
+        $pathPublic.'about'=> 'controllers/about.php',
+        $pathPublic.'contact' => 'controllers/contact.php',
+        $pathPublic.'notes' => 'controllers/notes/index.php',
+        $pathPublic.'notes/show' => 'controllers/notes/show.php',
+        $pathPublic.'notes/create' => 'controllers/notes/create.php'
 ];
 

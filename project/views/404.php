@@ -9,7 +9,7 @@ include "partials/header.php" ?>
     <main>
       <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <p class="text-3xl">Sorry, not found</p>
-        <a class="underline" href="/personal/php_practice/project">Back to home</a>
+        <a class="underline" href="/personal/php_practice/project/public">Back to home</a>
       </div>
     </main>
   </div>

@@ -1,8 +1,8 @@
-<?php include "views/partials/header.php" ?>
+<?php include base_path("views/partials/header.php") ?>
 <body class="h-full">
   <div class="min-h-full">
-    <?php include "views/partials/nav.php" ?>
-    <?php include "views/partials/banner.php" ?>
+    <?php include base_path("views/partials/nav.php") ?>
+    <?php include base_path("views/partials/banner.php") ?>
     <main>
       <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <h1>Los posis</h1>

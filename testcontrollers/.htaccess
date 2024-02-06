@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /personal/php_practice/testcontrollers/public/
+RewriteRule ^index\\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ./personal/php_practice/testcontrollers/public/index.php [L]
