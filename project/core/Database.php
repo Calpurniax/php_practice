@@ -20,7 +20,7 @@ class Database {
     }
 
     public function query($query, $params=[]){
-        
+       
         $this->statement = $this->connection->prepare($query);
         $this->statement->execute($params);
 
@@ -36,6 +36,7 @@ class Database {
     }
 
     public function findOrFail(){
+       
         $result= $this->find();
         if(!$result){
             abort(Response::NOT_FOUND);

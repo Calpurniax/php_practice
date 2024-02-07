@@ -1,12 +1,18 @@
 <?php 
 
 $pathPublic= '/personal/php_practice/project/public/';
-return [  
-        $pathPublic => 'controllers/index.php',
-        $pathPublic.'about'=> 'controllers/about.php',
-        $pathPublic.'contact' => 'controllers/contact.php',
-        $pathPublic.'notes' => 'controllers/notes/index.php',
-        $pathPublic.'notes/show' => 'controllers/notes/show.php',
-        $pathPublic.'notes/create' => 'controllers/notes/create.php'
-];
+
+
+$router->get($pathPublic,'controllers/index.php');
+$router->get($pathPublic.'about', 'controllers/about.php');
+$router->get($pathPublic.'contact', 'controllers/contact.php');
+
+$router->get($pathPublic.'notes', 'controllers/notes/index.php');
+$router->get($pathPublic.'notes/create', 'controllers/notes/create.php');
+$router->post($pathPublic.'notes', 'controllers/notes/store.php');
+
+$router->get($pathPublic.'note', 'controllers/notes/show.php');
+$router->delete($pathPublic.'note', 'controllers/notes/destroy.php');
+
+
 
