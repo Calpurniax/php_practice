@@ -1,7 +1,7 @@
 <?php
 
 
-use core\Response;
+use Core\Response;
 
 
 function dd ($value){

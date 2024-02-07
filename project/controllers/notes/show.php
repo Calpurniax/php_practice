@@ -1,10 +1,10 @@
 <?php
 
-use core\Database;
+use Core\Database;
+use Core\App;
 
 //create an instance for DB
-$config= require base_path('config.php');
-$db= new Database($config['database']);
+$db = App::resolve(Database::class);
 
 
 $current_user=1;
