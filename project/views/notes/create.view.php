@@ -5,7 +5,7 @@
     <?php include base_path("views/partials/banner.php") ?>
     <main>
       <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <form method="POST" action="/personal/php_practice/project/public/notes/">
+        <form method="POST" action="/personal/php_practice/project/public/notes">
           <div class="shadow sm:overflow-hidden sm:rounded-md">
             <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
               <div>
