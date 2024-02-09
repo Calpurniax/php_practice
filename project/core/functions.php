@@ -20,15 +20,6 @@ function abort($code){
     require base_path("views/$code.php");
 }
 
-// function routerController($uri, $routes){
-//     if(array_key_exists($uri, $routes)){  
-//         require base_path($routes[$uri]);
-//     }
-//     else{
-//         abort(404);
-//     }
-// }
-
 function authorize ($condition, $response = Response::FORBIDDEN){
     if(!$condition){
         abort($response);
